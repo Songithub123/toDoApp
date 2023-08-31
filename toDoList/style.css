@@ -1,0 +1,63 @@
+.task-list {
+  background-color: lightblue;  
+  font-size: 30px;
+}
+body {
+  background: linear-gradient(to right, lightblue, green, black);
+  background-size: cover;
+}
+
+input[id="input-task"],
+input[id="add-task"], .task-being-edited {
+  color: rgb(0, 119, 255);
+  font-size: 30px;
+}
+label[for="input-task"] {
+  font-size: 30px;
+}
+#remove-task {
+  background: transparent;
+  color: red;
+  font-size: 30px;
+  border-color: red;
+}
+.confirm-btn,.reject-btn{
+  width: 30px;
+  height: 30px;
+
+}
+#mark-task{
+  font-size: 30px;
+  background:rgb(0, 119, 255);
+  color: rgb(102, 18, 212);
+  border-color: rgb(130, 159, 255);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: relative;
+}
+.uncompleted-task{
+
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(34, 34, 224);
+}
+.marked-as-completed{
+  text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.5;
+}
+.tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  word-wrap: break-word;
+  /* Position the tooltip */
+  position: absolute;
+  top: 20px;
+  border: solid black 1px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
