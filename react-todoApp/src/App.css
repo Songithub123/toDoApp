@@ -3,7 +3,7 @@
   font-size: 30px;
 }
 body {
-  background: linear-gradient(to right, lightblue, green, black);
+  background: linear-gradient(to right, lightblue, rgb(71, 99, 224), black);
   background-size: cover;
 }
 

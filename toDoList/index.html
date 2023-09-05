@@ -9,15 +9,18 @@
     </head>
     <body>
         <div class="app-grid">
-            <form>
+            <form id="task-form" >
                 <label for="input-task">
                     <strong>New task:</strong>
                 </label>
                 <input id="input-task" type="text">
-                <input type="submit" id="add-task" value="Save">
-                <input type="button" id="remove-task" value="Remove">
-                <button type="button" id="mark-task" class="tooltip">Mark
-                    <span class="tooltiptext" >mark task as completed or uncompleted</span>
+                <input type="submit" id="add-task" value="Save task">
+                <button type="button" id="remove-task" class="tooltip" >
+                    Remove <span class="tooltiptext" >Remove checked tasks when clicked</span>
+                </button>
+                <button type="button" id="mark-task" class="tooltip">
+                    Mark
+                    <span class="tooltiptext">mark task as completed or uncompleted or check all</span>
                 </button>
             </form>
             <div class="task-list"></div>

@@ -1,10 +1,8 @@
-const myForm = document.querySelector("form");
+const myForm = document.querySelector("#task-form");
 const input_text = document.querySelector("#input-task");
 const task_list_box = document.querySelector(".task-list");
 const removeButton = document.querySelector("#remove-task");
 const markButton = document.querySelector("#mark-task");
-
-markButton.addEventListener("mouseover", () => {});
 
 // Call the load_task_list function when the page loads
 load_task_list();
@@ -37,9 +35,13 @@ function create_task_element(task_text) {
       confirmBtn.appendChild(confirmBtn_image);
       confirmBtn.addEventListener("click", () => {
         task_label.textContent = editedTask.value;
+        task.id = editedTask.value;
+        task_container.id = "Div of " + editedTask.value;
+        task_label.htmlFor = editedTask.value;
         editedTask.remove();
         confirmBtn.remove();
         rejectBtn.remove();
+        save_task_list();
       });
 
       const rejectBtn = document.createElement("button");
@@ -87,23 +89,24 @@ function submit_form() {
 
 myForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  if (input_text.value === "") return;
   submit_form();
 });
 markButton.addEventListener("click", () => {
-  const eachContainer = task_list_box.querySelectorAll(".uncompleted-task, .marked-as-completed");
+  const eachContainer = task_list_box.querySelectorAll(
+    ".uncompleted-task, .marked-as-completed"
+  );
   eachContainer.forEach((checkboxDiv) => {
     const checkboxes = checkboxDiv.querySelector('input[type="checkbox"]');
     if (checkboxes.checked) {
       checkboxDiv.classList.remove("uncompleted-task");
       checkboxDiv.classList.add("marked-as-completed");
     } else if (checkboxDiv.classList.contains("marked-as-completed")) {
-      console.log("does it work");
       checkboxDiv.classList.add("uncompleted-task");
       checkboxDiv.classList.remove("marked-as-completed");
     }
   });
 });
-
 // Update the removeButton event listener to call the save_task_list function
 removeButton.addEventListener("click", () => {
   const toDoList = task_list_box.querySelectorAll("input[type='checkbox']");

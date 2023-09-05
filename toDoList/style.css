@@ -57,6 +57,7 @@ label[for="input-task"] {
   position: absolute;
   top: 20px;
   border: solid black 1px;
+  z-index: 1000;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;

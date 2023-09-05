@@ -1,5 +1,6 @@
 import { useReducer } from 'react';
 import './App.css';
+import TaskBox from './taskBox';
 
 export const Actions = {
   addTask: "add-task",
@@ -40,7 +41,7 @@ function App() {
                 </button>
         </form>
         <div className="task-list">
-
+          {state}
         </div>
       </div>
     </>
