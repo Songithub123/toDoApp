@@ -1,8 +1,8 @@
-import { useReducer } from 'react';
-import './App.css';
-import TaskBox from './taskBox';
+import { useReducer, useState } from "react";
+import "./App.css";
+import TaskBox from "./taskBox";
 
-export const Actions = {
+/*export const Actions = {
   addTask: "add-task",
   deleteTask: "delete-task",
   editTask: "edit-task",
@@ -24,25 +24,34 @@ function reducer(state, action) {
     case Actions.unmark:
       break;
   }
-}
+}*/
 
 function App() {
-  const [state, dispatchFunction] = useReducer(reducer, []);
+  //const [state, dispatchFunction] = useReducer(reducer, []);
+  const [newTask, setNewTask] = useState("");
   return (
     <>
       <div className="app-grid">
         <form>
-          <label htmlFor="input-task"><strong>New task:</strong></label>
-          <input id="input-task" type="text"></input>
+          <label htmlFor="input-task">
+            <strong>New task:</strong>
+          </label>
+          <input
+            id="input-task"
+            type="text"
+            value={newTask}
+            onChange={event => setNewTask(event.target.value)}
+          ></input>
           <input type="submit" id="add-task" value="Save"></input>
           <input type="button" id="remove-task" value="Remove"></input>
-          <button type="button" id="mark-task" className="tooltip">Mark
-                    <span className="tooltiptext" >mark task as completed or uncompleted</span>
-                </button>
+          <button type="button" id="mark-task" className="tooltip">
+            Mark
+            <span className="tooltiptext">
+              mark task as completed or uncompleted
+            </span>
+          </button>
         </form>
-        <div className="task-list">
-          {state}
-        </div>
+        <div className="task-list"></div>
       </div>
     </>
   );
